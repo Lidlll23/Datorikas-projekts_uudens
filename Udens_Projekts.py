@@ -15,10 +15,11 @@ skvid=float(input("Ivadi 1 skolēna vidējo saldūdens patēriņu 1 dienā:"))
 skvidG=skd*skvid*365
 
 visud=37017300000000000000
+#11-Python nespēj veikt aprēķinus ar šitik lieliem skaitļiem
 
 patud=skvidG/visud*100
 #Neesmu pārliecināta par šo procentu rēķināšanas metodi
-#Kaut kas aprēķinos ir nepareizs, ievadot mazāku skd un skvid, procentu skaits patud palielinās. (prioritāte, viss lielākā)
+#Kaut kas aprēķinos ir nepareizs (skat. #11-), ievadot mazāku skd un skvid, procentu skaits patud palielinās. (prioritāte, viss lielākā)
 
 print(f"Tava klase vidēji gadā iztērē {patud}% no visām pasaules saldūdens krātuvēm!")
 
