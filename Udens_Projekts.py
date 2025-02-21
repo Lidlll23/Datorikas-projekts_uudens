@@ -18,6 +18,7 @@ visud=37017300000000000000
 #11-Python nespēj veikt aprēķinus ar šitik lieliem skaitļiem
 
 patud=skvidG/visud*100
+print(f"Jūs gadā patērējāt {patud}l saldūdens!")
 #Neesmu pārliecināta par šo procentu rēķināšanas metodi
 #Kaut kas aprēķinos ir nepareizs (skat. #11-), ievadot mazāku skd un skvid, procentu skaits patud palielinās. (prioritāte, viss lielākā)
 
