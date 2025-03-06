@@ -1,31 +1,31 @@
-udens=float(input("Ievadi savu ikdienas ūdens patēriņu (litros):"))
+print("Esi sveicināts! Šī programma aprēķina tavu un 9. klašu vidējo saldūdens patēriņu.")
+print("Jūsu zināšanai, Latvijā viens cilvēks vidēji dienā patērē 100l saldūdens!")
+
+udens=float(input("Ievadi savu vidējo saldūdens patēriņu 1 dienā(litros):"))
 
 udensD=udens
 udensM=udens*30
 udensG=udens*365
-#Šeit arī varētu ielikt datu krātuvi (prioritāte)
 
-print(f"Tu vidēji iztērē {udensD}l ūdens dienā, {udensM}l mēnesī un {udensG}l gadā.")
+print(f"Tu vidēji iztērē {udensD}l saldūdens dienā, {udensM}l mēnesī un {udensG}l gadā.")
 
-skd=int(input("Ivadi skolēnu skaitu:"))
+skd=int(input("Ivadi 9. klašu skolēnu skaitu:"))
 skvid=float(input("Ivadi 1 skolēna vidējo saldūdens patēriņu 1 dienā:"))
-#Optimizēšu/mainīšu 9. un 10. rindiņu (prioritāte)
-#Varbūt šeit ielikšu datu krātuvi (prioritāte)
 
 skvidG=skd*skvid*365
 
-visud=37017300000000000000
-#11-Python nespēj veikt aprēķinus ar šitik lieliem skaitļiem
+visud=3701730000
+#Pilnais skaits ir 37017300000000000000m^3, bet, pēc testēšanas secināju, ka python programma sāk rādīt kļūdas, ja skaitlī ir vairāk par 10 cipariem.
 
-patud=skvidG/visud*100
-print(f"Jūs gadā patērējāt {patud}l saldūdens!")
-#Neesmu pārliecināta par šo procentu rēķināšanas metodi
-#Kaut kas aprēķinos ir nepareizs (skat. #11-), ievadot mazāku skd un skvid, procentu skaits patud palielinās. (prioritāte, viss lielākā)
+patud=(skvidG/visud)*100
 
-print(f"Tava klase vidēji gadā iztērē {patud}% no visām pasaules saldūdens krātuvēm!")
+#Neesmu pārliecināta par šo procentu rēķināšanas metodi.
+#Kaut kas aprēķinos ir nepareizs, ievadot mazāku skd un skvid, procentu skaits patud palielinās.
+#Aprēķinu problēma ir mainīgais visud (skaitlis ir pārāk liels).
 
-if patud<10:
-    #Precizēšu pieļaujamos procentus vēlāk, pašlaiku paliks 10% (šī būs prioritāte pēc aprēķinu salabošanas)
+print(f"Tava klase vidēji gadā iztērē {skvidG}l saldūdens, kas ir {patud}*10^-9% no visām pasaules saldūdens krātuvēm!")
+
+if patud<0.048:
     print("Jūs esat eko draudzīgi!")
 else:
     print("Jūs neesat eko draudzīgi!")
@@ -34,26 +34,24 @@ izvele=input("Vai gribi izmantot programmu atkal? (jā/nē):")
 
 while True:
     if izvele=="jā":
-        udens=float(input("Ievadi savu ikdienas ūdens patēriņu (litros):"))
+        udens=float(input("Ievadi savu vidējo saldūdens patēriņu 1 dienā(litros):"))
 
         udensD=udens
         udensM=udens*30
         udensG=udens*365
 
-        print(f"Tu vidēji iztērē {udensD}l ūdens dienā, {udensM}l mēnesī un {udensG}l gadā.")
+        print(f"Tu vidēji iztērē {udensD}l saldūdens dienā, {udensM}l mēnesī un {udensG}l gadā.")
 
-        skd=int(input("Ivadi skolēnu skaitu:"))
+        skd=int(input("Ivadi 9. klašu skolēnu skaitu:"))
         skvid=float(input("Ivadi 1 skolēna vidējo saldūdens patēriņu 1 dienā:"))
 
         skvidG=skd*skvid*365
+        visud=3701730000
+        patud=(skvidG/visud)*100
 
-        visud=37017300000000000000
+        print(f"Tava klase vidēji gadā iztērē {skvidG}l saldūdens, kas ir {patud}*10^-9% no visām pasaules saldūdens krātuvēm!")
 
-        patud=skvidG/visud*100
-
-        print(f"Tava klase vidēji gadā iztērē {patud}% no visām pasaules saldūdens krātuvēm!")
-
-        if patud>10:
+        if patud<0.048:
             print("Jūs esat eko draudzīgi!")
         else:
             print("Jūs neesat eko draudzīgi!")
@@ -62,7 +60,3 @@ while True:
     else:
         print("Paldies par programmas izmantošanu!")
         break
-    #Ja atradīšu kā, tad optimizēšu šo ciklu (šī nav prioritāte)
- 
-#Uzlabosim tekstu (kopumā) (šī nav prioritāte)
-#Vajag izmantot datu krātuves(google tutorials) (veseli 2 punkti, prioritāte)
