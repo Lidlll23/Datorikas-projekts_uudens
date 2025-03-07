@@ -18,12 +18,13 @@ visud=3701730000
 #Pilnais skaits ir 37017300000000000000m^3, bet, pēc testēšanas secināju, ka python programma sāk rādīt kļūdas, ja skaitlī ir vairāk par 10 cipariem.
 
 patud=(skvidG/visud)*100
+patud_r=round(patud,4)
 
 #Neesmu pārliecināta par šo procentu rēķināšanas metodi.
 #Kaut kas aprēķinos ir nepareizs, ievadot mazāku skd un skvid, procentu skaits patud palielinās.
 #Aprēķinu problēma ir mainīgais visud (skaitlis ir pārāk liels).
 
-print(f"Tava klase vidēji gadā iztērē {skvidG}l saldūdens, kas ir {patud}*10^-9% no visām pasaules saldūdens krātuvēm!")
+print(f"Tava klase vidēji gadā iztērē {skvidG}l saldūdens, kas ir {patud_r}*10^-9% no visām pasaules saldūdens krātuvēm!")
 
 if patud<0.048:
     print("Jūs esat eko draudzīgi!")
@@ -48,8 +49,9 @@ while True:
         skvidG=skd*skvid*365
         visud=3701730000
         patud=(skvidG/visud)*100
+        patud_r=round(patud,4)
 
-        print(f"Tava klase vidēji gadā iztērē {skvidG}l saldūdens, kas ir {patud}*10^-9% no visām pasaules saldūdens krātuvēm!")
+        print(f"Tava klase vidēji gadā iztērē {skvidG}l saldūdens, kas ir {patud_r}*10^-9% no visām pasaules saldūdens krātuvēm!")
 
         if patud<0.048:
             print("Jūs esat eko draudzīgi!")
