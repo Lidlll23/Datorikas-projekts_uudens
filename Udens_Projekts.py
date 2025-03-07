@@ -9,8 +9,8 @@ udensG=udens*365
 
 print(f"Tu vidēji iztērē {udensD}l saldūdens dienā, {udensM}l mēnesī un {udensG}l gadā.")
 
-skd=int(input("Ivadi 9. klašu skolēnu skaitu:"))
-skvid=float(input("Ivadi 1 skolēna vidējo saldūdens patēriņu 1 dienā:"))
+skd=int(input("Ievadi 9. klašu skolēnu skaitu:"))
+skvid=float(input("Ievadi 1 skolēna vidējo saldūdens patēriņu 1 dienā:"))
 
 skvidG=skd*skvid*365
 
@@ -43,8 +43,8 @@ while True:
 
         print(f"Tu vidēji iztērē {udensD}l saldūdens dienā, {udensM}l mēnesī un {udensG}l gadā.")
 
-        skd=int(input("Ivadi 9. klašu skolēnu skaitu:"))
-        skvid=float(input("Ivadi 1 skolēna vidējo saldūdens patēriņu 1 dienā:"))
+        skd=int(input("Ievadi 9. klašu skolēnu skaitu:"))
+        skvid=float(input("Ievadi 1 skolēna vidējo saldūdens patēriņu 1 dienā:"))
 
         skvidG=skd*skvid*365
         visud=3701730000
